@@ -1,0 +1,30 @@
+@font-face {
+    font-family: 'FE-Schrift';
+    src: url('FE-FONT.ttf') format('truetype');
+}
+
+h1 {
+    font-family: 'FE-Font', sans-serif;
+    text-align: center;
+    color: white;
+    align-items: center;
+    display: flex;
+    margin: 0;
+    justify-content: center;
+    min-height: 50vh;
+}
+
+h3 {
+    font-family: Helvetica, sans-serif;
+    text-align: center;
+    color: white;
+    align-items: center;
+    display: flex;
+    margin: 0;
+    justify-content: center;
+}
+
+body {
+    background-color: #b300b3;
+
+}
