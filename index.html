@@ -2,18 +2,205 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>theLxna_playz Socials</title>
-    <link rel="stylesheet" href="style.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="res/styles/main.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/4419b7770f.js" crossorigin="anonymous"></script>
+    <script src="res/js/main.js"></script>
+
+    <title>Lyna Socials</title>
 </head>
 <body>
 
-<h1>
-    Hello! And Welcome to the LxnaPlayz Social Website!
-</h1>
 
-<h3>
-    Sadly this Site is still under construction. but feel free to Save it and check is, as
-    it will always stay updated!
-</h3>
+<header id="Home">
+    <div class="header-container">
+        <img class="logo-text small" src="res/img/willkommen-text.png">
+    </div>
+
+    <div class="button-container">
+        <button id="home-btn" class="menu-btn">
+            Home
+        </button>
+
+        <button id="info-btn" class="menu-btn">
+            Info
+        </button>
+
+        <button id="anderes-btn" class="menu-btn">
+            Other
+        </button>
+
+        <button id="impressum-btn" class="menu-btn">
+            <a href="impressum.html">
+                Impressum
+            </a>
+        </button>
+
+    </div>
+</header>
+
+<main>
+    <div class="landing" data-section="landing">
+        <div class="container">
+            <div class="background-box"></div>
+
+            <img class="logo" src="res/img/zycan-logo-tran.png" alt="Logo">
+        </div>
+
+        <h5 class="est"> Est. 2025 </h5>
+        <h1 class="title">WELCOME</h1>
+        <h2 class="title2"> On theLxna_playz's Social Website!</h2>
+    </div>
+
+    <div id="main-header" class="info" data-section="info">
+
+        <div class="youtube">
+            <a href="https://www.youtube.com/@zycan9168">
+                <img class="yt-logo" src="res/img/YouTube.png">
+            </a>
+
+            <a href="https://www.youtube.com/watch?v=4Fm-tDfkwgY&list=PL9a3Irui50FGlvOAujeolxLFcuG6TyeqB">
+                <img class="bilder" src="res/img/ACBF.jpg">
+            </a>
+
+            <a href="https://www.youtube.com/watch?v=zJPN8xJrdEk">
+                <img class="bilder" src="res/img/ccc.jpg">
+            </a>
+
+            <a href="https://www.youtube.com/watch?v=7bxeKLezlog&t=13s">
+                <img class="bilder" src="res/img/maxresdefault.jpg">
+            </a>
+
+        </div>
+
+        <div class="insta">
+            <div class="post-embed">
+                <a href="https://www.instagram.com/reel/CxSNDXFNQhy/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==">
+                    <img class="thumbnail" src="res/img/instagram-p4.jpg">
+                </a>
+            </div>
+
+            <div class="post-embed">
+                <a href="https://www.instagram.com/reel/C3XlF-3NbIp/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==">
+                    <img class="thumbnail" src="res/img/instagram-p3.jpg">
+                </a>
+            </div>
+
+            <div class="post-embed">
+                <a href="https://www.instagram.com/p/DB1I0c6tV6s/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==">
+                    <img class="thumbnail" src="res/img/instagram-p2.jpg">
+                </a>
+            </div>
+
+            <div class="post-embed">
+                <a href="https://www.instagram.com/reel/C8bTk5ntlqk/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==">
+                    <img class="thumbnail" src="res/img/instagram-p1.jpg">
+                </a>
+
+            </div>
+
+            <img class="insta-logo" src="res/img/Insta.png">
+        </div>
+
+    </div>
+
+    <div class="other" data-section="other">
+        <div class="other-container">
+            <div class="icon-container">
+                <button onclick="openSocialLink('https://tiktok.com/theLxna_playz')">
+                    <i class="fab fa-tiktok"></i>
+                </button>
+            </div>
+
+            <div class="details-container">
+                <h1>
+                    TikTok
+                </h1>
+
+                <p>
+                    Lxna Posts her Main Stuff here! Yes, Its Private, Yes she will accept every
+                    Follow Request, Yes you can DM her and Yes she will reply to you!
+                </p>
+            </div>
+        </div>
+
+        <div class="other-container">
+            <div class="icon-container">
+                <button onclick="openSocialLink('https://www.instagram.com/theLxna_playz')">
+                    <i class="fab fa-instagram"></i>
+                </button>
+            </div>
+
+            <div class="details-container">
+                <h1>
+                    Instagram
+                </h1>
+
+                <p>
+                    She Doesnt Post much on Instagram but you can still follow her there
+                    for some random Posts and Stories
+            </div>
+        </div>
+
+        <div class="other-container">
+            <div class="icon-container">
+                <button onclick="openSocialLink('https://vrchat.com/home/user/theLxna_playz')">
+                    <i class="fab fa-twitch"></i>
+                </button>
+            </div>
+
+            <div class="details-container">
+                <h1>
+                    Twitch
+                </h1>
+
+                <p>
+
+                    Now, The big one
+                    Lxna Streams on Twitch every now and then, but if you want to see her Streaming, you can follow her on Twitch and turn on Notifications to get notified when she goes live!
+                    (Alcohol and Vulgar Language Warning)
+
+                </p>
+            </div>
+        </div>
+
+        <div class="other-container">
+            <div class="icon-container">
+                <button onclick="openSocialLink('https://patreon.com/zycan')">
+                    <i class="fab fa-linktree"></i>
+                </button>
+            </div>
+
+            <div class="details-container">
+                <h1>
+                    Linktree
+                </h1>
+
+                <p>
+                    For All other socials and Links, you can check out Lxnas Linktree, where she has all her other Socials and Links listed, so you can easily find them all in one place!
+                </p>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+
+    <p>&nbsp</p>
+    <h5>Copyright ZyCan 2025&copy;, All rights Reserved</h5>
+    <p>&nbsp</p>
+
+
+</main>
+
+
 </body>
+
 </html>
