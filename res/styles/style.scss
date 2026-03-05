@@ -1,0 +1,690 @@
+/* ============================================
+   IMPORT & VARIABLES
+   ============================================ */
+@import url("https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&family=Lexend+Deca:wght@100..900&family=Outfit:wght@100..900&display=swap");
+
+// Color Palette
+$primary-color: #8b3fb6;
+$primary-dark: #6a2d8a;
+$primary-light: #a850c7;
+$accent-color: #28756d;
+$background: linear-gradient(135deg, #1a0d2e 0%, #3d1f5c 100%);
+$text-light: #f5f5f5;
+$text-muted: #b0b0b0;
+$shadow-light: 0 4px 15px rgba(0, 0, 0, 0.1);
+$shadow-medium: 0 8px 25px rgba(0, 0, 0, 0.15);
+$shadow-heavy: 0 12px 40px rgba(0, 0, 0, 0.25);
+
+// Fonts
+$font-primary: "Lexend Deca", sans-serif;
+$font-secondary: "Dongle", sans-serif;
+
+/* ============================================
+   GLOBAL RESET & BASE STYLES
+   ============================================ */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, main {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+}
+
+body {
+  background: $background;
+  color: $text-light;
+  font-family: $font-primary;
+  overflow-x: hidden;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 80px;
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+@keyframes rotate {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hover-float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* ============================================
+   HEADER NAVIGATION
+   ============================================ */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background: rgba(139, 63, 182, 0.95);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  z-index: 1000;
+  box-shadow: $shadow-heavy;
+  border-bottom: 2px solid rgba(168, 80, 199, 0.3);
+
+  .header-container {
+    position: relative;
+    width: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+
+    img.logo-text {
+      position: relative;
+      width: auto;
+      height: 50px;
+      object-fit: contain;
+    }
+  }
+
+  .button-container {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    align-items: center;
+
+    button.menu-btn {
+      position: relative;
+      font-family: $font-primary;
+      font-size: 18px;
+      font-weight: 600;
+      padding: 10px 24px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 25px;
+      color: $text-light;
+      background-color: rgba(255, 255, 255, 0.1);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+        border-color: rgba(255, 255, 255, 0.6);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(168, 80, 199, 0.4);
+      }
+
+      &:active {
+        transform: translateY(0);
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+/* ============================================
+   LANDING SECTION
+   ============================================ */
+div.landing {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px 50px;
+  animation: fadeInUp 0.8s ease;
+
+  div.container {
+    position: relative;
+    width: 500px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+    animation: hover-float 3s ease-in-out infinite;
+
+    div.background-box {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 32px;
+      background: radial-gradient(circle at 30% 50%, rgba(168, 80, 199, 0.2), transparent),
+                  linear-gradient(135deg, $accent-color, $primary-dark);
+      box-shadow: $shadow-heavy;
+      border: 2px solid rgba(168, 80, 199, 0.3);
+    }
+
+    img.logo {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 280px;
+      height: 280px;
+      transform: translate(-50%, -50%);
+      filter: drop-shadow(0 0 20px rgba(168, 80, 199, 0.4));
+      object-fit: contain;
+      z-index: 10;
+    }
+  }
+
+  h5.est {
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 3px;
+    color: $text-muted;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  h1.title {
+    font-size: 80px;
+    font-weight: 900;
+    text-shadow: 0 0 30px rgba(168, 80, 199, 0.5);
+    margin-bottom: 20px;
+    animation: fadeInUp 1s ease;
+  }
+
+  h2.title2 {
+    font-size: 28px;
+    font-weight: 300;
+    color: $text-muted;
+    text-align: center;
+    max-width: 600px;
+    animation: fadeInUp 1.2s ease;
+  }
+}
+
+/* ============================================
+   INFO SECTION - SOCIAL MEDIA SHOWCASE
+   ============================================ */
+div.info {
+  width: 100%;
+  min-height: auto;
+  padding: 80px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+
+  div.youtube,
+  div.insta {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    overflow-x: auto;
+    padding: 20px 0;
+    scroll-behavior: smooth;
+
+    &::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: rgba(168, 80, 199, 0.5);
+      border-radius: 10px;
+
+      &:hover {
+        background: rgba(168, 80, 199, 0.7);
+      }
+    }
+  }
+
+  .yt-logo,
+  .insta-logo {
+    width: 180px;
+    height: 180px;
+    flex-shrink: 0;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.2));
+  }
+
+  img.bilder {
+    width: 300px;
+    height: 200px;
+    flex-shrink: 0;
+    border-radius: 16px;
+    border: 3px solid rgba(168, 80, 199, 0.3);
+    object-fit: cover;
+    transition: all 0.3s ease;
+    box-shadow: $shadow-medium;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.05) translateY(-5px);
+      border-color: rgba(168, 80, 199, 0.6);
+      box-shadow: $shadow-heavy;
+    }
+  }
+
+  div.post-embed {
+    width: 200px;
+    height: 200px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    border: 3px solid rgba(168, 80, 199, 0.3);
+    overflow: hidden;
+    box-shadow: $shadow-medium;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.05) translateY(-8px);
+      border-color: rgba(168, 80, 199, 0.6);
+      box-shadow: $shadow-heavy;
+
+      img.thumbnail {
+        transform: scale(1.1);
+      }
+    }
+
+    a,
+    img.thumbnail {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    img.thumbnail {
+      transition: transform 0.3s ease;
+    }
+  }
+}
+
+/* ============================================
+   OTHER SECTION - SOCIAL PLATFORMS
+   ============================================ */
+div.other {
+  width: 100%;
+  min-height: auto;
+  padding: 80px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+
+  div.other-container {
+    width: 100%;
+    max-width: 800px;
+    height: 220px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 40px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    border: 2px solid rgba(168, 80, 199, 0.2);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(168, 80, 199, 0.5);
+      transform: translateX(10px);
+      box-shadow: $shadow-medium;
+    }
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+    div.icon-container {
+      width: 180px;
+      height: 180px;
+      min-width: 180px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, $primary-color, $primary-dark);
+      border-radius: 20px;
+      box-shadow: $shadow-medium;
+      transition: all 0.3s ease;
+
+      button {
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+        color: $text-light;
+        border: none;
+        border-radius: 20px;
+        outline: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:hover {
+          transform: scale(1.1);
+          background: rgba(255, 255, 255, 0.1);
+        }
+
+        &:active {
+          transform: scale(0.95);
+        }
+
+        i {
+          font-size: 90px;
+          color: $text-light;
+        }
+
+        // Ko-fi Special Icon
+        i.fa-ko-fi::before {
+          content: "\f0f4";
+          display: inline-block;
+          font-size: 1em;
+          line-height: 0.45em;
+          margin: -0.45em 0 0 -0.2em;
+          overflow-y: hidden;
+          padding-top: 0.45em;
+        }
+
+        i.fa-ko-fi::after {
+          color: $primary-color;
+          content: "\f004";
+          font-size: 45%;
+          font-weight: 900;
+          margin: 0.7em 0 0 -2em;
+          position: absolute;
+        }
+      }
+    }
+
+    div.details-container {
+      flex: 1;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 12px;
+
+      h1 {
+        font-size: 32px;
+        font-weight: 700;
+        color: $text-light;
+      }
+
+      p {
+        font-family: $font-primary;
+        font-size: 16px;
+        font-weight: 400;
+        color: $text-muted;
+        line-height: 1.6;
+      }
+    }
+  }
+}
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+p {
+  font-family: $font-primary;
+  font-size: 18px;
+  margin: 0;
+  color: $text-muted;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+  font-family: $font-primary;
+  color: $text-light;
+}
+
+h5 {
+  font-weight: 300;
+}
+
+/* ============================================
+   LINKS
+   ============================================ */
+a {
+  text-decoration: none;
+  color: $text-light;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: $primary-light;
+  }
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+div.impressum {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 40px 20px;
+  gap: 15px;
+  text-align: center;
+  color: $text-muted;
+  font-size: 14px;
+  border-top: 1px solid rgba(168, 80, 199, 0.2);
+  margin-top: 60px;
+}
+
+/* ============================================
+   MEDIA QUERIES
+   ============================================ */
+@media (max-width: 1024px) {
+  div.other div.other-container {
+    height: auto;
+    flex-direction: column;
+    gap: 20px;
+
+    div.icon-container {
+      width: 140px;
+      height: 140px;
+      min-width: 140px;
+    }
+
+    div.details-container {
+      h1 {
+        font-size: 24px;
+      }
+
+      p {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 0 20px;
+    height: 60px;
+
+    .header-container img.logo-text {
+      height: 40px;
+    }
+
+    .button-container {
+      gap: 8px;
+
+      button.menu-btn {
+        font-size: 14px;
+        padding: 8px 16px;
+      }
+    }
+  }
+
+  main {
+    padding-top: 70px;
+  }
+
+  div.landing {
+    padding: 60px 20px;
+
+    div.container {
+      width: 350px;
+      height: 250px;
+
+      img.logo {
+        width: 200px;
+        height: 200px;
+      }
+    }
+
+    h1.title {
+      font-size: 50px;
+    }
+
+    h2.title2 {
+      font-size: 18px;
+    }
+  }
+
+  div.info {
+    gap: 40px;
+
+    div.youtube,
+    div.insta {
+      gap: 20px;
+    }
+
+    img.bilder {
+      width: 200px;
+      height: 140px;
+    }
+
+    div.post-embed {
+      width: 140px;
+      height: 140px;
+    }
+
+    .yt-logo,
+    .insta-logo {
+      width: 120px;
+      height: 120px;
+    }
+  }
+
+  div.other {
+    padding: 60px 20px;
+    gap: 25px;
+
+    div.other-container {
+      flex-direction: column;
+      height: auto;
+      gap: 20px;
+      padding: 20px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    .button-container {
+      display: none;
+    }
+  }
+
+  div.landing {
+    h1.title {
+      font-size: 36px;
+    }
+
+    h2.title2 {
+      font-size: 14px;
+    }
+
+    div.container {
+      width: 280px;
+      height: 200px;
+
+      img.logo {
+        width: 160px;
+        height: 160px;
+      }
+    }
+  }
+
+  div.info div.post-embed {
+    width: 120px;
+    height: 120px;
+  }
+
+  div.other div.other-container {
+    div.icon-container {
+      width: 120px;
+      height: 120px;
+
+      button i {
+        font-size: 60px;
+      }
+    }
+
+    div.details-container {
+      h1 {
+        font-size: 20px;
+      }
+
+      p {
+        font-size: 12px;
+      }
+    }
+  }
+}
