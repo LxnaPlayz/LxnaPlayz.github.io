@@ -37,28 +37,7 @@ LxnaPlayz.github.io/
         └── [weitere Bilder]
 ```
 
-## 🚀 Deployment auf GitHub Pages
 
-### Automatisches Deployment
-Die Website wird automatisch deployed wenn Änderungen auf `main` gepusht werden!
-
-```bash
-# Änderungen vornehmen
-git add .
-git commit -m "Update: [Beschreibung der Änderungen]"
-git push origin main
-```
-
-Die Website ist dann unter deiner Domain abrufbar (siehe CNAME).
-
-### Manuelles Update
-Falls du nur kleine CSS/HTML/JS Änderungen machst:
-
-```bash
-git add index.html res/styles/style.css res/js/main.js
-git commit -m "Fix: [Beschreibung]"
-git push origin main
-```
 
 ## 📝 Lokale Entwicklung & Änderungen
 
@@ -151,7 +130,7 @@ In `index.html` neue Container zu `div.other` hinzufügen:
 
 ## 📄 Lizenz
 
-Alle Rechte vorbehalten © 2025 Zycan
+Alle Rechte vorbehalten © 2026 theLxna_playz. Keine kommerzielle Nutzung ohne ausdrückliche Genehmigung.
 
 ## 📞 Kontakt
 
