@@ -1,85 +1,54 @@
-# 🚀 QUICK START - GitHub Pages Deployment
+# GitHub Pages Deployment Guide
 
-## 💡 Wichtig: Keine lokale Kompilation nötig!
+This project is a static website. No build step is required for deployment.
 
-Die Website ist **sofort einsatzbereit** für GitHub Pages. Alles was du tun musst:
+## 1) One-time GitHub Pages setup
+
+1. Open repository `Settings` -> `Pages`.
+2. Set `Source` to `Deploy from a branch`.
+3. Choose branch `main` and folder `/ (root)`.
+4. Save.
+
+If you use a custom domain, keep `CNAME` in the repository root.
+
+## 2) Deploy updates
 
 ```bash
 git add .
-git commit -m "Initial commit: Professional social links hub"
+git commit -m "Update website"
 git push origin main
 ```
 
-**Fertig!** Deine Website ist live! 🎉
+GitHub Pages usually publishes in about 1-2 minutes.
 
-## 📝 Änderungen vornehmen
+## 3) What to edit
 
-### Option 1: HTML/JavaScript (schnell)
-1. Editiere `index.html` oder `res/js/main.js` direkt
-2. Speichern
-3. Commit & Push
-4. Website aktualisiert sich sofort (~1-2 Min)
+- `index.html`: layout, gallery items, social cards
+- `res/styles/style.css`: production styling
+- `res/js/main.js`: interactions (scrolling, social links, lightbox)
+- `res/pictures/`: image assets used by the gallery and branding
 
-### Option 2: CSS (nur Styling)
-1. Editiere `res/styles/style.css` direkt
-2. Speichern
-3. Commit & Push
-4. Website aktualisiert sich sofort
+## Optional SCSS workflow (local only)
 
-### Option 3: Komplexe Änderungen (lokal entwickeln)
-Falls du komplexe SCSS-Änderungen lokal testen willst:
+If you prefer SCSS locally, compile to CSS before pushing.
 
 ```bash
-# SCSS installieren (einmalig)
-npm install -g sass
-
-# Lokale Änderungen an SCSS testen
-sass --watch res/styles:res/styles
-
-# Wenn alles passt: CSS committen & pushen
-git add res/styles/style.css
-git commit -m "Update: CSS improvements"
-git push origin main
+sass res/styles/style.scss res/styles/style.css
 ```
 
-## 📂 Was wird zu GitHub hochgeladen?
+Deployment still serves `res/styles/style.css`.
 
-✅ **Hochgeladen:**
-- `index.html`
-- `res/styles/style.css` (kompilierte CSS)
-- `res/js/main.js`
-- `res/img/` (alle Bilder)
-- `res/fonts/` (Fonts)
-- `README.md`
-- `.gitignore`
-- `CNAME`
+## Publish checklist
 
-❌ **NICHT hochgeladen (automatisch ignoriert):**
-- `res/styles/style.scss` (Source)
-- `node_modules/`
-- `prepros.config`
-- `.idea/` und andere IDE-Dateien
-- `.DS_Store`
+- [ ] `index.html` references `res/styles/style.css`
+- [ ] New images are committed under `res/pictures/`
+- [ ] Latest `res/js/main.js` is committed
+- [ ] `CNAME` is correct (if using custom domain)
+- [ ] Changes are pushed to `main`
 
-## 🔗 Website-URL
+## Troubleshooting
 
-Deine Website ist erreichbar unter:
-```
-https://[deine-domain.com]
-```
-
-(Konfiguriert in `CNAME`)
-
-## ✅ Checkliste für Live-Deployment
-
-- [x] HTML ist aktuell
-- [x] CSS ist kompiliert und aktuell
-- [x] Bilder sind in `res/img/`
-- [x] .gitignore ist konfiguriert
-- [x] GitHub Pages ist aktiviert
-- [x] Domain (CNAME) ist konfiguriert
-
----
-
-**Status: READY FOR PRODUCTION! 🚀**
+- If updates do not appear, hard refresh the browser (`Cmd+Shift+R`).
+- Verify the latest commit exists on GitHub.
+- Check `Settings` -> `Pages` for deployment status/errors.
 

@@ -6,7 +6,8 @@
    GLOBAL RESET & BASE STYLES
    ============================================ */
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
@@ -26,40 +27,87 @@ body {
 }
 
 main {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding-top: 80px;
 }
 
 /* ============================================
    ANIMATIONS
    ============================================ */
-@keyframes rotate {
+@-webkit-keyframes rotate {
   0% {
-    transform: rotateY(0deg);
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
   }
   100% {
-    transform: rotateY(360deg);
+    -webkit-transform: rotateY(360deg);
+            transform: rotateY(360deg);
+  }
+}
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+  100% {
+    -webkit-transform: rotateY(360deg);
+            transform: rotateY(360deg);
+  }
+}
+@-webkit-keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(30px);
+            transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
 }
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    -webkit-transform: translateY(30px);
+            transform: translateY(30px);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+@-webkit-keyframes hover-float {
+  0%, 100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  50% {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
   }
 }
 @keyframes hover-float {
   0%, 100% {
-    transform: translateY(0px);
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
   }
   50% {
-    transform: translateY(-10px);
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
   }
 }
 /* ============================================
@@ -73,35 +121,62 @@ header {
   height: 70px;
   background: rgba(139, 63, 182, 0.95);
   backdrop-filter: blur(10px);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding: 0 40px;
   z-index: 1000;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
   border-bottom: 2px solid rgba(168, 80, 199, 0.3);
 }
 header .header-container {
   position: relative;
   width: auto;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 header .header-container img.logo-text {
   position: relative;
   width: auto;
   height: 50px;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 header .button-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   gap: 12px;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 header .button-container button.menu-btn {
   position: relative;
@@ -114,6 +189,7 @@ header .button-container button.menu-btn {
   color: #f5f5f5;
   background-color: rgba(255, 255, 255, 0.1);
   cursor: pointer;
+  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -121,11 +197,14 @@ header .button-container button.menu-btn {
 header .button-container button.menu-btn:hover {
   background-color: rgba(255, 255, 255, 0.2);
   border-color: rgba(255, 255, 255, 0.6);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(168, 80, 199, 0.4);
+  -webkit-transform: translateY(-2px);
+          transform: translateY(-2px);
+  -webkit-box-shadow: 0 4px 12px rgba(168, 80, 199, 0.4);
+          box-shadow: 0 4px 12px rgba(168, 80, 199, 0.4);
 }
 header .button-container button.menu-btn:active {
-  transform: translateY(0);
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
 }
 header .button-container button.menu-btn a {
   color: inherit;
@@ -138,23 +217,43 @@ header .button-container button.menu-btn a {
 div.landing {
   width: 100%;
   min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding: 80px 20px 50px;
-  animation: fadeInUp 0.8s ease;
+  -webkit-animation: fadeInUp 0.8s ease;
+          animation: fadeInUp 0.8s ease;
 }
 div.landing div.container {
   position: relative;
   width: 500px;
   height: 350px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin-bottom: 50px;
-  animation: hover-float 3s ease-in-out infinite;
+  -webkit-animation: hover-float 3s ease-in-out infinite;
+          animation: hover-float 3s ease-in-out infinite;
 }
 div.landing div.container div.background-box {
   position: absolute;
@@ -162,7 +261,8 @@ div.landing div.container div.background-box {
   height: 100%;
   border-radius: 32px;
   background: radial-gradient(circle at 30% 50%, rgba(168, 80, 199, 0.2), transparent), linear-gradient(135deg, #28756d, #6a2d8a);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
   border: 2px solid rgba(168, 80, 199, 0.3);
 }
 div.landing div.container img.logo {
@@ -171,9 +271,12 @@ div.landing div.container img.logo {
   left: 50%;
   width: 280px;
   height: 280px;
-  transform: translate(-50%, -50%);
-  filter: drop-shadow(0 0 20px rgba(168, 80, 199, 0.4));
-  object-fit: contain;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-filter: drop-shadow(0 0 20px rgba(168, 80, 199, 0.4));
+          filter: drop-shadow(0 0 20px rgba(168, 80, 199, 0.4));
+  -o-object-fit: contain;
+     object-fit: contain;
   z-index: 10;
 }
 div.landing h5.est {
@@ -189,7 +292,8 @@ div.landing h1.title {
   font-weight: 900;
   text-shadow: 0 0 30px rgba(168, 80, 199, 0.5);
   margin-bottom: 20px;
-  animation: fadeInUp 1s ease;
+  -webkit-animation: fadeInUp 1s ease;
+          animation: fadeInUp 1s ease;
 }
 div.landing h2.title2 {
   font-size: 28px;
@@ -197,7 +301,8 @@ div.landing h2.title2 {
   color: #b0b0b0;
   text-align: center;
   max-width: 600px;
-  animation: fadeInUp 1.2s ease;
+  -webkit-animation: fadeInUp 1.2s ease;
+          animation: fadeInUp 1.2s ease;
 }
 
 /* ============================================
@@ -207,20 +312,38 @@ div.info {
   width: 100%;
   min-height: auto;
   padding: 80px 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   gap: 60px;
 }
 div.info div.youtube,
 div.info div.insta {
   width: 100%;
   max-width: 1200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   gap: 30px;
   overflow-x: auto;
   padding: 20px 0;
@@ -244,61 +367,172 @@ div.info div.youtube::-webkit-scrollbar-thumb:hover,
 div.info div.insta::-webkit-scrollbar-thumb:hover {
   background: rgba(168, 80, 199, 0.7);
 }
+div.info div.insta {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  overflow-x: visible;
+  row-gap: 30px;
+  padding: 0;
+}
 div.info .yt-logo,
 div.info .insta-logo {
   width: 180px;
   height: 180px;
-  flex-shrink: 0;
-  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.2));
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  -webkit-filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.2));
+          filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.2));
 }
 div.info img.bilder {
   width: 300px;
   height: 200px;
-  flex-shrink: 0;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
   border-radius: 16px;
   border: 3px solid rgba(168, 80, 199, 0.3);
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
   cursor: pointer;
 }
 div.info img.bilder:hover {
-  transform: scale(1.05) translateY(-5px);
+  -webkit-transform: scale(1.05) translateY(-5px);
+          transform: scale(1.05) translateY(-5px);
   border-color: rgba(168, 80, 199, 0.6);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
 }
-div.info div.post-embed {
-  width: 200px;
-  height: 200px;
-  flex-shrink: 0;
+div.info div.post-slot {
+  width: 300px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+div.info div.image-slot {
+  width: 100%;
+  aspect-ratio: 16/9;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   border-radius: 16px;
   border: 3px solid rgba(168, 80, 199, 0.3);
   overflow: hidden;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(135deg, rgba(139, 63, 182, 0.45), rgba(40, 117, 109, 0.35));
+  -webkit-box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   cursor: pointer;
 }
-div.info div.post-embed:hover {
-  transform: scale(1.05) translateY(-8px);
+div.info div.image-slot:hover {
+  -webkit-transform: scale(1.05) translateY(-8px);
+          transform: scale(1.05) translateY(-8px);
   border-color: rgba(168, 80, 199, 0.6);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
 }
-div.info div.post-embed:hover img.thumbnail {
-  transform: scale(1.1);
-}
-div.info div.post-embed a,
-div.info div.post-embed img.thumbnail {
+div.info div.image-slot img.slot-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   display: block;
 }
-div.info div.post-embed img.thumbnail {
-  transition: transform 0.3s ease;
+div.info div.image-slot:focus-visible {
+  outline: 3px solid rgba(201, 139, 255, 0.9);
+  outline-offset: 4px;
+}
+
+/* ============================================
+   GALLERY LIGHTBOX
+   ============================================ */
+body.lightbox-open {
+  overflow: hidden;
+}
+
+div.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 24px;
+  background: rgba(10, 5, 18, 0.86);
+  backdrop-filter: blur(8px);
+}
+
+div.lightbox[hidden] {
+  display: none;
+}
+
+div.lightbox div.lightbox-content {
+  width: 100%;
+  max-width: 1100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+div.lightbox img#lightbox-image {
+  width: auto;
+  max-width: 100%;
+  max-height: 85vh;
+  display: block;
+  border-radius: 18px;
+  border: 2px solid rgba(201, 139, 255, 0.45);
+  background: #11071d;
+  -webkit-box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+button.lightbox-close {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #f5f5f5;
+  font-size: 30px;
+  line-height: 1;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+button.lightbox-close:hover,
+button.lightbox-close:focus-visible {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.45);
 }
 
 /* ============================================
@@ -308,33 +542,54 @@ div.other {
   width: 100%;
   min-height: auto;
   padding: 80px 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   gap: 40px;
 }
 div.other div.other-container {
   width: 100%;
   max-width: 800px;
   height: 220px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   gap: 40px;
   padding: 30px;
   background: rgba(255, 255, 255, 0.05);
   border-radius: 20px;
   border: 2px solid rgba(168, 80, 199, 0.2);
+  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
 }
 div.other div.other-container:hover {
   background: rgba(255, 255, 255, 0.08);
   border-color: rgba(168, 80, 199, 0.5);
-  transform: translateX(10px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  -webkit-transform: translateX(10px);
+          transform: translateX(10px);
+  -webkit-box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 div.other div.other-container:last-of-type {
   margin-bottom: 0;
@@ -343,13 +598,24 @@ div.other div.other-container div.icon-container {
   width: 180px;
   height: 180px;
   min-width: 180px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   background: linear-gradient(135deg, #8b3fb6, #6a2d8a);
   border-radius: 20px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 div.other div.other-container div.icon-container button {
@@ -361,17 +627,26 @@ div.other div.other-container div.icon-container button {
   border-radius: 20px;
   outline: none;
   cursor: pointer;
+  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 div.other div.other-container div.icon-container button:hover {
-  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
   background: rgba(255, 255, 255, 0.1);
 }
 div.other div.other-container div.icon-container button:active {
-  transform: scale(0.95);
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
 }
 div.other div.other-container div.icon-container button i {
   font-size: 90px;
@@ -395,12 +670,23 @@ div.other div.other-container div.icon-container button i.fa-ko-fi::after {
   position: absolute;
 }
 div.other div.other-container div.details-container {
-  flex: 1;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   gap: 12px;
 }
 div.other div.other-container div.details-container h1 {
@@ -443,6 +729,7 @@ h5 {
 a {
   text-decoration: none;
   color: #f5f5f5;
+  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 a:hover {
@@ -453,10 +740,19 @@ a:hover {
    FOOTER
    ============================================ */
 div.impressum {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 100%;
   padding: 40px 20px;
   gap: 15px;
@@ -473,7 +769,10 @@ div.impressum {
 @media (max-width: 1024px) {
   div.other div.other-container {
     height: auto;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     gap: 20px;
   }
   div.other div.other-container div.icon-container {
@@ -514,8 +813,8 @@ div.impressum {
     height: 250px;
   }
   div.landing div.container img.logo {
-    width: 200px;
-    height: 200px;
+    width: 600px;
+    height: 600px;
   }
   div.landing h1.title {
     font-size: 50px;
@@ -530,13 +829,15 @@ div.impressum {
   div.info div.insta {
     gap: 20px;
   }
+  div.info div.insta {
+    row-gap: 20px;
+  }
   div.info img.bilder {
     width: 200px;
     height: 140px;
   }
-  div.info div.post-embed {
-    width: 140px;
-    height: 140px;
+  div.info div.post-slot {
+    width: 220px;
   }
   div.info .yt-logo,
   div.info .insta-logo {
@@ -547,8 +848,18 @@ div.impressum {
     padding: 60px 20px;
     gap: 25px;
   }
+  button.lightbox-close {
+    top: 14px;
+    right: 14px;
+    width: 42px;
+    height: 42px;
+    font-size: 26px;
+  }
   div.other div.other-container {
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     height: auto;
     gap: 20px;
     padding: 20px;
@@ -572,9 +883,8 @@ div.impressum {
     width: 160px;
     height: 160px;
   }
-  div.info div.post-embed {
-    width: 120px;
-    height: 120px;
+  div.info div.post-slot {
+    width: 180px;
   }
   div.other div.other-container div.icon-container {
     width: 120px;
@@ -590,5 +900,3 @@ div.impressum {
     font-size: 12px;
   }
 }
-
-/*# sourceMappingURL=style.css.map */

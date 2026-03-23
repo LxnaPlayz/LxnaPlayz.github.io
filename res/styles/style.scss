@@ -279,6 +279,13 @@ div.info {
     }
   }
 
+  div.insta {
+    flex-wrap: wrap;
+    overflow-x: visible;
+    row-gap: 30px;
+    padding: 0;
+  }
+
   .yt-logo,
   .insta-logo {
     width: 180px;
@@ -305,9 +312,14 @@ div.info {
     }
   }
 
-  div.post-embed {
-    width: 200px;
-    height: 200px;
+  div.post-slot {
+    width: 300px;
+    flex-shrink: 0;
+  }
+
+  div.image-slot {
+    width: 100%;
+    aspect-ratio: 16 / 9;
     flex-shrink: 0;
     display: flex;
     flex-direction: column;
@@ -316,6 +328,7 @@ div.info {
     border-radius: 16px;
     border: 3px solid rgba(168, 80, 199, 0.3);
     overflow: hidden;
+    background: linear-gradient(135deg, rgba(139, 63, 182, 0.45), rgba(40, 117, 109, 0.35));
     box-shadow: $shadow-medium;
     transition: all 0.3s ease;
     cursor: pointer;
@@ -324,22 +337,13 @@ div.info {
       transform: scale(1.05) translateY(-8px);
       border-color: rgba(168, 80, 199, 0.6);
       box-shadow: $shadow-heavy;
-
-      img.thumbnail {
-        transform: scale(1.1);
-      }
     }
 
-    a,
-    img.thumbnail {
+    img.slot-image {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
-    }
-
-    img.thumbnail {
-      transition: transform 0.3s ease;
     }
   }
 }
@@ -583,8 +587,8 @@ div.impressum {
       height: 250px;
 
       img.logo {
-        width: 200px;
-        height: 200px;
+        width: 600px;
+        height: 600px;
       }
     }
 
@@ -605,14 +609,17 @@ div.impressum {
       gap: 20px;
     }
 
+    div.insta {
+      row-gap: 20px;
+    }
+
     img.bilder {
       width: 200px;
       height: 140px;
     }
 
-    div.post-embed {
-      width: 140px;
-      height: 140px;
+    div.post-slot {
+      width: 220px;
     }
 
     .yt-logo,
@@ -662,9 +669,8 @@ div.impressum {
     }
   }
 
-  div.info div.post-embed {
-    width: 120px;
-    height: 120px;
+  div.info div.post-slot {
+    width: 180px;
   }
 
   div.other div.other-container {

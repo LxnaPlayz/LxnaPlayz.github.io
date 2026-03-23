@@ -31,6 +31,26 @@ function openSocialLink(link) {
  * Initialize all event listeners
  */
 $(function () {
+    const $lightbox = $("#gallery-lightbox");
+    const $lightboxImage = $("#lightbox-image");
+
+    function openGalleryLightbox(imageSrc, imageAlt) {
+        if (!imageSrc) {
+            return;
+        }
+
+        $lightboxImage.attr("src", imageSrc);
+        $lightboxImage.attr("alt", imageAlt || "Expanded gallery image");
+        $lightbox.removeAttr("hidden").attr("aria-hidden", "false");
+        $("body").addClass("lightbox-open");
+    }
+
+    function closeGalleryLightbox() {
+        $lightbox.attr("hidden", "hidden").attr("aria-hidden", "true");
+        $lightboxImage.attr("src", "");
+        $("body").removeClass("lightbox-open");
+    }
+
     // Navigation button event listeners
     $("#home-btn").on("click", function () {
         scrollToSection("landing");
@@ -49,5 +69,37 @@ $(function () {
         e.preventDefault();
         const target = $(this).attr("href").slice(1);
         scrollToSection(target);
+    });
+
+    // Make gallery cards keyboard-accessible and open them in a lightbox.
+    $(".info .image-slot")
+        .attr({
+            role: "button",
+            tabindex: "0",
+            "aria-label": "Open image in larger view"
+        })
+        .on("click", function () {
+            const $image = $(this).find("img.slot-image").first();
+            openGalleryLightbox($image.attr("src"), $image.attr("alt"));
+        })
+        .on("keydown", function (e) {
+            if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                $(this).trigger("click");
+            }
+        });
+
+    $(".lightbox-close").on("click", closeGalleryLightbox);
+
+    $lightbox.on("click", function (e) {
+        if (e.target === this) {
+            closeGalleryLightbox();
+        }
+    });
+
+    $(document).on("keydown", function (e) {
+        if (e.key === "Escape" && !$lightbox.is("[hidden]")) {
+            closeGalleryLightbox();
+        }
     });
 });
