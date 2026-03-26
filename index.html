@@ -6,8 +6,10 @@
     <link rel="stylesheet" href="res/styles/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/4419b7770f.js" crossorigin="anonymous"></script>
+    <script src="res/js/i18n.js" defer></script>
+    <script src="res/js/mobile-menu.js" defer></script>
     <script src="res/js/main.js"></script>
-    <title>Lyna Socials - Official Social Links</title>
+    <title data-i18n="page_title_home">Lyna Socials - Official Social Links</title>
 </head>
 <body>
 
@@ -16,18 +18,55 @@
      ============================================ -->
 <header id="Home">
     <div class="header-container">
-        <img class="logo-text" src="res/pictures/LogoText.png">
+        <img class="logo-text" src="res/pictures/LogoText.png" alt="Lyna Playz Logo">
     </div>
 
     <div class="button-container">
-        <button id="home-btn" class="menu-btn">Home</button>
-        <button id="anderes-btn" class="menu-btn">Socials</button>
-        <button id="info-btn" class="menu-btn">Gallery</button>
-        <button id="impressum-btn" class="menu-btn">
-            <a href="Kommission.html">Kommission</a>
-        </button>
+        <button class="menu-btn" data-scroll="landing" data-i18n="nav_home">Home</button>
+        <button class="menu-btn" data-scroll="other" data-i18n="nav_socials">Socials</button>
+        <button class="menu-btn" data-scroll="info" data-i18n="nav_gallery">Gallery</button>
+        <a id="kommission-btn" class="menu-btn" href="Kommission.html" data-i18n="nav_commission">Commission</a>
+        <div class="lang-switch" aria-label="Language switch">
+            <span class="lang-switch-label" data-i18n="lang_label">Language</span>
+            <div class="lang-switch-toggle" role="group" aria-label="Language switch" data-i18n-aria-label="language_switch">
+                <button type="button" class="lang-btn" data-lang="de">DE</button>
+                <button type="button" class="lang-btn" data-lang="en">EN</button>
+            </div>
+        </div>
     </div>
+
+    <button
+            class="mobile-menu-toggle"
+            type="button"
+            aria-controls="mobile-side-menu"
+            aria-expanded="false"
+            aria-label="Open menu"
+            data-i18n-aria-label="mobile_menu_open"
+    >
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+    </button>
 </header>
+
+<aside id="mobile-side-menu" class="mobile-side-menu" aria-hidden="true">
+    <div class="mobile-side-header">
+        <h2 data-i18n="mobile_menu_title">Menu</h2>
+        <button type="button" class="mobile-side-close" aria-label="Close menu" data-i18n-aria-label="mobile_menu_close">&times;</button>
+    </div>
+    <nav class="mobile-side-links" aria-label="Mobile navigation" data-i18n-aria-label="mobile_navigation">
+        <a href="#landing" data-i18n="nav_home">Home</a>
+        <a href="#socials" data-i18n="nav_socials">Socials</a>
+        <a href="#gallery" data-i18n="nav_gallery">Gallery</a>
+        <a href="Kommission.html" data-i18n="nav_commission">Commission</a>
+    </nav>
+    <div class="mobile-side-lang">
+        <span class="lang-switch-label" data-i18n="lang_label">Language</span>
+        <div class="lang-switch-toggle" role="group" aria-label="Language switch" data-i18n-aria-label="language_switch">
+            <button type="button" class="lang-btn" data-lang="de">DE</button>
+            <button type="button" class="lang-btn" data-lang="en">EN</button>
+        </div>
+    </div>
+</aside>
+<div class="mobile-menu-backdrop" hidden></div>
 
 <!-- ============================================
      MAIN CONTENT
@@ -35,208 +74,38 @@
 <main>
 
     <!-- LANDING SECTION -->
-    <div class="landing" data-section="landing">
+    <div id="landing" class="landing" data-section="landing">
         <div class="container">
             <div class="background-box"></div>
-            <img class="logo" src="res/pictures/LogoText.png">
+            <img class="logo" src="res/pictures/LogoText.png" alt="Lyna Playz">
         </div>
 
         <h5 class="est">Est. 2025</h5>
-        <h1 class="title">WELCOME</h1>
-        <h2 class="title2">On Lyna Playz's Official Social Hub!</h2>
+        <h1 class="title" data-i18n="home_welcome">WELCOME</h1>
+        <h2 class="title2" data-i18n="home_subtitle">On Lyna Playz's Official Social Hub!</h2>
     </div>
 
 
 
     <!-- SOCIAL PLATFORMS SECTION -->
-    <div class="other" data-section="other">
-        <!-- TikTok -->
-        <div class="other-container">
-            <div class="icon-container">
-                <button onclick="openSocialLink('https://tiktok.com/theLxna_playz')" title="Follow on TikTok">
-                    <i class="fab fa-tiktok"></i>
-                </button>
-            </div>
-
-            <div class="details-container">
-                <h1>Main TikTok</h1>
-                <p>
-                    Lyna posts her main content here! The account is private, but she accepts all follow requests.
-                    Feel free to DM her—she'll respond!
-                </p>
-            </div>
-        </div>
-
-        <!-- TikTok -->
-        <div class="other-container">
-            <div class="icon-container">
-                <button onclick="openSocialLink('https://tiktok.com/theLxna_playz')" title="Follow on TikTok">
-                    <i class="fab fa-tiktok"></i>
-                </button>
-            </div>
-
-            <div class="details-container">
-                <h1>VRC TikTok</h1>
-                <p>
-                    One of Lyna's Public German Profiles.
-                    Here she posts content related to VRChat, including clips from her streams and VRChat events. If you're interested in her VRChat adventures, this is the account to follow!
-                </p>
-            </div>
-        </div>
-
-        <!-- TikTok -->
-        <div class="other-container">
-            <div class="icon-container">
-                <button onclick="openSocialLink('https://tiktok.com/LxnaPlayz_VRC')" title="Follow on TikTok">
-                    <i class="fab fa-tiktok"></i>
-                </button>
-            </div>
-
-            <div class="details-container">
-                <h1>VRC Family TikTok</h1>
-                <p>
-                    Another Public German Profile, but this one is more focused on Lyna's VRChat family and friends.
-                    Expect fun clips, collaborations, and content that highlights the amazing people in her VRChat community!
-                </p>
-            </div>
-        </div>
-
-        <!-- Instagram -->
-        <div class="other-container">
-            <div class="icon-container">
-                <button onclick="openSocialLink('https://www.instagram.com/theLxna_playz')" title="Follow on Instagram">
-                    <i class="fab fa-instagram"></i>
-                </button>
-            </div>
-
-            <div class="details-container">
-                <h1>Instagram</h1>
-                <p>
-                    Follow for random posts and stories. While updates are infrequent, you'll get a peek into
-                    Lyna's everyday moments and creative content.
-                </p>
-            </div>
-        </div>
-
-        <!-- Twitch -->
-        <div class="other-container">
-            <div class="icon-container">
-                <button onclick="openSocialLink('https://www.twitch.tv/theLxna_playz')" title="Follow on Twitch">
-                    <i class="fab fa-twitch"></i>
-                </button>
-            </div>
-
-            <div class="details-container">
-                <h1>Twitch</h1>
-                <p>
-                    Lyna streams occasionally on Twitch. Follow and enable notifications to catch her live sessions!
-                    <strong>Note:</strong> Streams may contain mature language and alcohol references.
-                </p>
-            </div>
-        </div>
-
-        <!-- Linktree -->
-        <div class="other-container">
-            <div class="icon-container">
-                <button onclick="openSocialLink('https://linktr.ee/theLxna_playz')" title="Open Linktree">
-                    <i class="fab fa-linktree"></i>
-                </button>
-            </div>
-
-            <div class="details-container">
-                <h1>Linktree</h1>
-                <p>
-                    Find all of Lyna's other social media accounts and links in one convenient place.
-                    Your go-to hub for connecting across all platforms!
-                </p>
-            </div>
-        </div>
+    <div id="socials" class="other" data-section="other">
+        <!-- Dynamically rendered from res/js/main.js to avoid repeated card markup -->
     </div>
 
 
     <!-- GALLERY SECTION -->
-    <div id="main-header" class="info" data-section="info">
+    <div id="gallery" class="info" data-section="info">
         <!-- Instagram Section -->
-        <div class="insta">
-            <div class="post-slot">
-                <div class="image-slot">
-                    <img class="slot-image" src="res/pictures/VRC1.png" loading="lazy">
-                </div>
-            </div>
-
-            <div class="post-slot">
-                <div class="image-slot">
-                    <img class="slot-image" src="res/pictures/VRC2.png" loading="lazy">
-                </div>
-            </div>
-
-            <div class="post-slot">
-                <div class="image-slot">
-                    <img class="slot-image" src="res/pictures/VRC3.png" loading="lazy">
-                </div>
-            </div>
-
-            <div class="post-slot">
-                <div class="image-slot">
-                    <img class="slot-image" src="res/pictures/VRC4.png" loading="lazy">
-                </div>
-            </div>
-
-            <div class="post-slot">
-                <div class="image-slot">
-                    <img class="slot-image" src="res/pictures/VRC5.png" loading="lazy">
-                </div>
-            </div>
-
-            <div class="post-slot">
-                <div class="image-slot">
-                    <img class="slot-image" src="res/pictures/VRC6.png" loading="lazy">
-                </div>
-            </div>
-
-            <div class="post-slot">
-                <div class="image-slot">
-                    <img class="slot-image" src="res/pictures/VRC7.png" loading="lazy">
-                </div>
-            </div>
-
-            <div class="post-slot">
-                <div class="image-slot">
-                    <img class="slot-image" src="res/pictures/VRC8.png" loading="lazy">
-                </div>
-            </div>
-
-            <div class="post-slot">
-                <div class="image-slot">
-                    <img class="slot-image" src="res/pictures/VRC9.png" loading="lazy">
-                </div>
-            </div>
-
-            <div class="post-slot">
-                <div class="image-slot">
-                    <img class="slot-image" src="res/pictures/VRC10.png" loading="lazy">
-                </div>
-            </div>
-
-            <div class="post-slot">
-                <div class="image-slot">
-                    <img class="slot-image" src="res/pictures/VRC11.png" loading="lazy">
-                </div>
-            </div>
-
-            <div class="post-slot">
-                <div class="image-slot">
-                    <img class="slot-image" src="res/pictures/VRC12.png" loading="lazy">
-                </div>
-            </div>
+        <div id="gallery-grid" class="insta">
+            <!-- Dynamically rendered from res/js/main.js to avoid repeated slot markup -->
         </div>
     </div>
 
     <!-- GALLERY LIGHTBOX -->
     <div id="gallery-lightbox" class="lightbox" aria-hidden="true" hidden>
-        <button type="button" class="lightbox-close" aria-label="Close image preview">&times;</button>
-        <div class="lightbox-content" role="dialog" aria-modal="true" aria-label="Image preview">
-            <img id="lightbox-image" src="" alt="Expanded gallery image">
+        <button type="button" class="lightbox-close" aria-label="Close image preview" data-i18n-aria-label="lightbox_close">&times;</button>
+        <div class="lightbox-content" role="dialog" aria-modal="true" aria-label="Image preview" data-i18n-aria-label="lightbox_dialog">
+            <img id="lightbox-image" src="" alt="Expanded gallery image" data-i18n-alt="lightbox_image_alt">
         </div>
     </div>
 
@@ -244,7 +113,7 @@
     <!-- FOOTER -->
     <div class="impressum">
         <p>&copy; 2026 theLxna_playz. All rights reserved.</p>
-        <p><a href="impressum.html">Impressum</a></p>
+        <p><a href="impressum.html" data-i18n="footer_imprint">Imprint</a></p>
     </div>
 
 </main>
