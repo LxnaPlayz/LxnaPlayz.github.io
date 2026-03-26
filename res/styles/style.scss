@@ -280,9 +280,11 @@ div.info {
   }
 
   div.insta {
-    flex-wrap: wrap;
-    overflow-x: visible;
-    row-gap: 30px;
+    width: min(1320px, 100%);
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+    overflow: visible;
     padding: 0;
   }
 
@@ -313,8 +315,7 @@ div.info {
   }
 
   div.post-slot {
-    width: 300px;
-    flex-shrink: 0;
+    width: 100%;
   }
 
   div.image-slot {
@@ -355,15 +356,14 @@ div.other {
   width: 100%;
   min-height: auto;
   padding: 80px 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  max-width: 1320px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
   gap: 40px;
 
   div.other-container {
     width: 100%;
-    max-width: 800px;
     height: 220px;
     display: flex;
     flex-direction: row;
@@ -533,6 +533,10 @@ div.impressum {
    MEDIA QUERIES
    ============================================ */
 @media (max-width: 1024px) {
+  div.other {
+    grid-template-columns: 1fr;
+  }
+
   div.other div.other-container {
     height: auto;
     flex-direction: column;
@@ -610,7 +614,8 @@ div.impressum {
     }
 
     div.insta {
-      row-gap: 20px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
     }
 
     img.bilder {
@@ -619,7 +624,7 @@ div.impressum {
     }
 
     div.post-slot {
-      width: 220px;
+      width: 100%;
     }
 
     .yt-logo,
@@ -669,8 +674,14 @@ div.impressum {
     }
   }
 
-  div.info div.post-slot {
-    width: 180px;
+  div.info {
+    div.post-slot {
+      width: 100%;
+    }
+
+    div.insta {
+      grid-template-columns: 1fr;
+    }
   }
 
   div.other div.other-container {
