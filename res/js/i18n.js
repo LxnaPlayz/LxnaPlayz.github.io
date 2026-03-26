@@ -1,6 +1,6 @@
 (function () {
-    const STORAGE_KEY = "siteLanguage";
     const SUPPORTED_LANGUAGES = ["en", "de"];
+    let currentLanguage = "en";
 
     const translations = {
         en: {
@@ -24,6 +24,10 @@
             mobile_navigation: "Mobile navigation",
             home_welcome: "WELCOME",
             home_subtitle: "On Lyna Playz's Official Social Hub!",
+            home_commission_kicker: "Commission Open",
+            home_commission_title: "VRChat Avatar Commissions Are Open",
+            home_commission_text: "Custom setup, optimization, and detail-focused avatar work. Click below to request your commission.",
+            home_commission_cta: "Go to Commission Page",
             lightbox_close: "Close image preview",
             lightbox_dialog: "Image preview",
             lightbox_image_alt: "Expanded gallery image",
@@ -59,6 +63,12 @@
             commission_price_transparency_value: "clear communication",
             commission_price_transparency_text: "Before we start, you get a realistic estimate for timeline and expected effort.",
             commission_disclaimer: "Disclaimer: If you prefer, I can also purchase assets for you when you send the money upfront. In that case, you always receive proof of purchase/receipts. This can simplify file sharing and transfer.",
+            commission_qualifications_title: "Core Principles",
+            commission_qualification_1: "Bug fixes are free for lifetime.",
+            commission_qualification_2: "I only work with hourly billing, never per project.",
+            commission_qualification_3: "I focus on fine detail, not on speed.",
+            commission_qualification_4: "I listen to every detail you want, so dont hesitate to tell me every small thing",
+            commission_qualification_5: "No project is delivered as just \"good enough\".",
             commission_requirements_title: "What I need from you before we start",
             commission_req_1_title: "Base and asset files",
             commission_req_1_text: "Please send all required files, including installation notes or readme information if available.",
@@ -103,6 +113,10 @@
             mobile_navigation: "Mobile Navigation",
             home_welcome: "WILLKOMMEN",
             home_subtitle: "Auf dem offiziellen Social Hub von Lyna Playz!",
+            home_commission_kicker: "Kommission Offen",
+            home_commission_title: "VRChat Avatar Kommissionen sind offen",
+            home_commission_text: "Individuelles Setup, Optimierung und detailfokussierte Avatar-Arbeit. Klicke unten, um deine Kommission anzufragen.",
+            home_commission_cta: "Zur Kommissionsseite",
             lightbox_close: "Bildvorschau schliessen",
             lightbox_dialog: "Bildvorschau",
             lightbox_image_alt: "Vergroessertes Galerie-Bild",
@@ -138,6 +152,12 @@
             commission_price_transparency_value: "klare Absprache",
             commission_price_transparency_text: "Vor Start bekommst du eine realistische Einschaetzung zu Zeitrahmen und Aufwand.",
             commission_disclaimer: "Disclaimer: Auf Wunsch kaufe ich Assets auch selbst fuer dich, wenn du mir das Geld vorab sendest. Du bekommst in diesem Fall immer Belege/Quittungen. Das vereinfacht den Austausch und das Senden von Dateien.",
+            commission_qualifications_title: "Schwerpunkte",
+            commission_qualification_1: "Bugfixes sind lebenslang kostenlos.",
+            commission_qualification_2: "Ich nehme nur stundenweise Bezahlung, nicht pro Projekt.",
+            commission_qualification_3: "Ich arbeite nach feinem Detail, nicht nach Geschwindigkeit.",
+            commission_qualification_4: "Ich hoere mir alle Wuensche an.",
+            commission_qualification_5: "Kein Projekt wird nur \"gut genug\" abgegeben.",
             commission_requirements_title: "Was ich vor Start von dir brauche",
             commission_req_1_title: "Base- und Asset-Dateien",
             commission_req_1_text: "Bitte sende alle benoetigten Dateien sowie Installations- oder Readme-Hinweise, falls vorhanden.",
@@ -163,14 +183,15 @@
         }
     };
 
-    function getStoredLanguage() {
-        const stored = localStorage.getItem(STORAGE_KEY);
-        return SUPPORTED_LANGUAGES.includes(stored) ? stored : "en";
+    function getInitialLanguage() {
+        const langFromHtml = document.documentElement.lang;
+        return SUPPORTED_LANGUAGES.includes(langFromHtml) ? langFromHtml : "en";
     }
 
     function applyTranslations(lang) {
         const selectedLang = SUPPORTED_LANGUAGES.includes(lang) ? lang : "en";
         const dict = translations[selectedLang];
+        currentLanguage = selectedLang;
 
         document.documentElement.lang = selectedLang;
 
@@ -215,12 +236,11 @@
     }
 
     function setLanguage(lang) {
-        localStorage.setItem(STORAGE_KEY, lang);
         applyTranslations(lang);
     }
 
     function initLanguageSwitch() {
-        const initialLanguage = getStoredLanguage();
+        const initialLanguage = getInitialLanguage();
 
         document.querySelectorAll(".lang-btn").forEach(function (button) {
             button.addEventListener("click", function () {
@@ -233,7 +253,9 @@
 
     window.siteI18n = {
         setLanguage: setLanguage,
-        getLanguage: getStoredLanguage,
+        getLanguage: function () {
+            return currentLanguage;
+        },
         applyTranslations: applyTranslations
     };
 

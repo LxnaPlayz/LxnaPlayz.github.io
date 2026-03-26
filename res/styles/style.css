@@ -401,6 +401,53 @@ header .button-container .menu-btn.menu-btn-active {
 /* ============================================
    LANDING SECTION
    ============================================ */
+section.main-commission-banner {
+  width: min(920px, calc(100% - 48px));
+  margin-top: 10px;
+  padding: 16px 18px;
+  border-radius: 18px;
+  border: 1px solid rgba(168, 80, 199, 0.2);
+  background: linear-gradient(135deg, rgba(139, 63, 182, 0.16), rgba(40, 117, 109, 0.12));
+  -webkit-box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+          box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+  text-align: center;
+  display: -ms-grid;
+  display: grid;
+  gap: 8px;
+}
+section.main-commission-banner .main-commission-banner-kicker {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #cda8dd;
+}
+section.main-commission-banner h2 {
+  font-size: clamp(20px, 3.2vw, 30px);
+}
+section.main-commission-banner p {
+  max-width: 680px;
+  margin: 0 auto;
+  font-size: 15px;
+}
+section.main-commission-banner .kommission-cta {
+  display: inline-block;
+  justify-self: center;
+  margin-top: 4px;
+  border: 1px solid rgba(168, 80, 199, 0.45);
+  border-radius: 999px;
+  padding: 9px 18px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, rgba(139, 63, 182, 0.55), rgba(168, 80, 199, 0.45));
+}
+section.main-commission-banner .kommission-cta:hover {
+  -webkit-transform: translateY(-2px);
+          transform: translateY(-2px);
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.18);
+          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.18);
+}
 div.landing {
   width: 100%;
   min-height: 100vh;
@@ -1018,6 +1065,18 @@ body.kommission-page .kommission-faq-list article {
   border-radius: 16px;
   padding: 20px;
 }
+body.kommission-page .kommission-qualifications-list {
+  margin: 0;
+  padding-left: 20px;
+  display: -ms-grid;
+  display: grid;
+  gap: 10px;
+}
+body.kommission-page .kommission-qualifications-list li {
+  font-size: 17px;
+  line-height: 1.6;
+  color: #d0d0d0;
+}
 body.kommission-page .kommission-contact {
   text-align: center;
   background: linear-gradient(130deg, rgba(40, 117, 109, 0.35), rgba(139, 63, 182, 0.35));
@@ -1108,6 +1167,47 @@ body.beispiele-page .beispiel-item img {
 }
 
 /* ============================================
+   IMPRESSUM PAGE
+   ============================================ */
+body.impressum-page main {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 110px 20px 30px;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+body.impressum-page .impressum-card {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(168, 80, 199, 0.25);
+  border-radius: 24px;
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+  padding: 36px;
+  -webkit-box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+}
+body.impressum-page .impressum-card h1 {
+  font-size: clamp(34px, 5vw, 48px);
+  margin-bottom: 12px;
+}
+body.impressum-page .impressum-card h2 {
+  font-size: clamp(22px, 3vw, 30px);
+  margin: 24px 0 10px;
+}
+body.impressum-page .impressum-card p {
+  line-height: 1.7;
+  color: #d0d0d0;
+}
+body.impressum-page .impressum-card .impressum-note {
+  font-size: 15px;
+  color: #d7b7e6;
+}
+
+
+/* ============================================
    MEDIA QUERIES
    ============================================ */
 @media (max-width: 1024px) {
@@ -1154,6 +1254,11 @@ body.beispiele-page .beispiel-item img {
   }
   div.landing {
     padding: 60px 20px;
+  }
+  section.main-commission-banner {
+    width: calc(100% - 28px);
+    margin-top: 6px;
+    padding: 14px 14px;
   }
   div.landing div.container {
     width: 350px;
@@ -1227,6 +1332,9 @@ body.beispiele-page .beispiel-item img {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 16px;
   }
+  body.impressum-page .impressum-card {
+    padding: 28px;
+  }
 }
 @media (max-width: 480px) {
   header .mobile-menu-toggle {
@@ -1238,6 +1346,9 @@ body.beispiele-page .beispiel-item img {
   }
   div.landing h2.title2 {
     font-size: 14px;
+  }
+  section.main-commission-banner h2 {
+    font-size: 20px;
   }
   div.landing div.container {
     width: 280px;
@@ -1292,5 +1403,12 @@ body.beispiele-page .beispiel-item img {
   body.beispiele-page .beispiel-grid {
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
+  }
+  body.impressum-page main {
+    padding-top: 88px;
+  }
+  body.impressum-page .impressum-card {
+    padding: 22px;
+    border-radius: 18px;
   }
 }
