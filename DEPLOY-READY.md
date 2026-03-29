@@ -11,6 +11,9 @@ Die Seite ist als **deprecated** markiert und auf Weiterleitung eingerichtet.
 ## Was aktuell deployed wird
 
 - `index.html` mit Hinweistext und Redirect-Logik
+- `Kommission.html` mit Redirect-Logik
+- `Beispiele.html` mit Redirect-Logik
+- `impressum.html` mit Redirect-Logik
 - Doku-Dateien mit Deprecated-Status
 
 ## Schnell deployen
@@ -23,5 +26,5 @@ git push origin main
 
 ## Erwartetes Verhalten
 
-- Aufruf der alten Seite -> automatische Weiterleitung zu `https://lxnaplayz.site`
+- Aufruf einer alten Seite -> automatische Weiterleitung zu `https://lxnaplayz.site`
 - Falls Weiterleitung blockiert ist -> manueller Link ist sichtbar
