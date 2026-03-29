@@ -1,181 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="res/styles/style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://kit.fontawesome.com/4419b7770f.js" crossorigin="anonymous"></script>
-    <script src="res/js/main.js"></script>
-    <title>Lyna Socials - Official Social Links</title>
+    <title>Website umgezogen - theLxna_playz</title>
+    <meta name="description" content="Diese Website ist veraltet und wurde auf https://lxnaplayz.site umgezogen.">
+    <link rel="canonical" href="https://lxnaplayz.site">
+    <style>
+        :root {
+            color-scheme: dark;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #111;
+            color: #f5f5f5;
+            text-align: center;
+            padding: 24px;
+        }
+
+        main {
+            max-width: 560px;
+        }
+
+        a {
+            color: #8b5cf6;
+            font-weight: 700;
+        }
+    </style>
+    <script>
+        (function () {
+            var targetUrl = "https://lxnaplayz.site";
+            if (window.location.href.indexOf(targetUrl) !== 0) {
+                window.location.replace(targetUrl);
+            }
+        })();
+    </script>
 </head>
 <body>
-
-<!-- ============================================
-     HEADER NAVIGATION
-     ============================================ -->
-<header id="Home">
-    <div class="header-container">
-        <img class="logo-text" src="res/img/willkommen-text.png" alt="Lyna Playz Logo">
-    </div>
-
-    <div class="button-container">
-        <button id="home-btn" class="menu-btn">Home</button>
-        <button id="info-btn" class="menu-btn">Gallery</button>
-        <button id="anderes-btn" class="menu-btn">Socials</button>
-        <button id="impressum-btn" class="menu-btn">
-            <a href="impressum.html">Impressum</a>
-        </button>
-    </div>
-</header>
-
-<!-- ============================================
-     MAIN CONTENT
-     ============================================ -->
 <main>
-
-    <!-- LANDING SECTION -->
-    <div class="landing" data-section="landing">
-        <div class="container">
-            <div class="background-box"></div>
-            <img class="logo" src="res/img/zycan-logo-tran.png" alt="Zycan Logo">
-        </div>
-
-        <h5 class="est">Est. 2025</h5>
-        <h1 class="title">WELCOME</h1>
-        <h2 class="title2">On Lyna Playz's Official Social Hub!</h2>
-    </div>
-
-    <!-- GALLERY SECTION -->
-    <div id="main-header" class="info" data-section="info">
-        <!-- YouTube Section -->
-        <div class="youtube">
-            <a href="https://www.youtube.com/@zycan9168" title="Visit YouTube Channel">
-                <img class="yt-logo" src="res/img/YouTube.png" alt="YouTube Logo">
-            </a>
-
-            <a href="https://www.youtube.com/watch?v=4Fm-tDfkwgY&list=PL9a3Irui50FGlvOAujeolxLFcuG6TyeqB" title="Watch Playlist">
-                <img class="bilder" src="res/img/ACBF.jpg" alt="ACBF Series">
-            </a>
-
-            <a href="https://www.youtube.com/watch?v=zJPN8xJrdEk" title="Watch Video">
-                <img class="bilder" src="res/img/ccc.jpg" alt="Video Thumbnail">
-            </a>
-
-            <a href="https://www.youtube.com/watch?v=7bxeKLezlog&t=13s" title="Watch Video">
-                <img class="bilder" src="res/img/maxresdefault.jpg" alt="Video Thumbnail">
-            </a>
-        </div>
-
-        <!-- Instagram Section -->
-        <div class="insta">
-            <div class="post-embed">
-                <a href="https://www.instagram.com/reel/CxSNDXFNQhy/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" title="View Instagram Post">
-                    <img class="thumbnail" src="res/img/instagram-p4.jpg" alt="Instagram Post">
-                </a>
-            </div>
-
-            <div class="post-embed">
-                <a href="https://www.instagram.com/reel/C3XlF-3NbIp/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" title="View Instagram Post">
-                    <img class="thumbnail" src="res/img/instagram-p3.jpg" alt="Instagram Post">
-                </a>
-            </div>
-
-            <div class="post-embed">
-                <a href="https://www.instagram.com/p/DB1I0c6tV6s/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" title="View Instagram Post">
-                    <img class="thumbnail" src="res/img/instagram-p2.jpg" alt="Instagram Post">
-                </a>
-            </div>
-
-            <div class="post-embed">
-                <a href="https://www.instagram.com/reel/C8bTk5ntlqk/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" title="View Instagram Post">
-                    <img class="thumbnail" src="res/img/instagram-p1.jpg" alt="Instagram Post">
-                </a>
-            </div>
-
-            <img class="insta-logo" src="res/img/Insta.png" alt="Instagram Logo">
-        </div>
-    </div>
-
-    <!-- SOCIAL PLATFORMS SECTION -->
-    <div class="other" data-section="other">
-        <!-- TikTok -->
-        <div class="other-container">
-            <div class="icon-container">
-                <button onclick="openSocialLink('https://tiktok.com/theLxna_playz')" title="Follow on TikTok">
-                    <i class="fab fa-tiktok"></i>
-                </button>
-            </div>
-
-            <div class="details-container">
-                <h1>TikTok</h1>
-                <p>
-                    Lyna posts her main content here! The account is private, but she accepts all follow requests.
-                    Feel free to DM her—she'll respond!
-                </p>
-            </div>
-        </div>
-
-        <!-- Instagram -->
-        <div class="other-container">
-            <div class="icon-container">
-                <button onclick="openSocialLink('https://www.instagram.com/theLxna_playz')" title="Follow on Instagram">
-                    <i class="fab fa-instagram"></i>
-                </button>
-            </div>
-
-            <div class="details-container">
-                <h1>Instagram</h1>
-                <p>
-                    Follow for random posts and stories. While updates are infrequent, you'll get a peek into
-                    Lyna's everyday moments and creative content.
-                </p>
-            </div>
-        </div>
-
-        <!-- Twitch -->
-        <div class="other-container">
-            <div class="icon-container">
-                <button onclick="openSocialLink('https://www.twitch.tv/theLxna_playz')" title="Follow on Twitch">
-                    <i class="fab fa-twitch"></i>
-                </button>
-            </div>
-
-            <div class="details-container">
-                <h1>Twitch</h1>
-                <p>
-                    Lyna streams occasionally on Twitch. Follow and enable notifications to catch her live sessions!
-                    <strong>Note:</strong> Streams may contain mature language and alcohol references.
-                </p>
-            </div>
-        </div>
-
-        <!-- Linktree -->
-        <div class="other-container">
-            <div class="icon-container">
-                <button onclick="openSocialLink('https://linktr.ee/theLxna_playz')" title="Open Linktree">
-                    <i class="fab fa-linktree"></i>
-                </button>
-            </div>
-
-            <div class="details-container">
-                <h1>Linktree</h1>
-                <p>
-                    Find all of Lyna's other social media accounts and links in one convenient place.
-                    Your go-to hub for connecting across all platforms!
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <!-- FOOTER -->
-    <div class="impressum">
-        <p>&copy; 2026 theLxna_playz. All rights reserved.</p>
-        <p><a href="impressum.html">Impressum</a></p>
-    </div>
-
+    <h1>Diese Website ist deprecated.</h1>
+    <p>Du wirst automatisch weitergeleitet.</p>
+    <p>
+        Falls die Weiterleitung nicht funktioniert, nutze diesen Link:<br>
+        <a href="https://lxnaplayz.site">https://lxnaplayz.site</a>
+    </p>
 </main>
-
 </body>
 
 </html>
