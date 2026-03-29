@@ -268,8 +268,8 @@ div.info img.bilder:hover {
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
 }
 div.info div.post-embed {
-  width: 320px;
-  height: 180px;
+  width: 200px;
+  height: 200px;
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
@@ -535,8 +535,8 @@ div.impressum {
     height: 140px;
   }
   div.info div.post-embed {
-    width: 240px;
-    height: 135px;
+    width: 140px;
+    height: 140px;
   }
   div.info .yt-logo,
   div.info .insta-logo {
@@ -573,8 +573,8 @@ div.impressum {
     height: 160px;
   }
   div.info div.post-embed {
-    width: 200px;
-    height: 112px;
+    width: 120px;
+    height: 120px;
   }
   div.other div.other-container div.icon-container {
     width: 120px;
