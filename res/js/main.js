@@ -9,32 +9,6 @@
  * Smooth scroll to a specific section
  * @param {string} section - The data-section attribute value
  */
-
-// 1. User klickt auf Login
-function loginWithPatreon() {
-    const clientId = 'tOeVZiSArB8xR3PRiOLReqme-5Y98Yf1_ayO1li32pps-fyOpfZ4tUyKc8rKNMUg';
-    const redirectUri = 'https://lxnaplayz.site';
-    window.location.href = `https://www.patreon.com/oauth2/authorize?response_type=code&client_id=${clientId}&redirect_uri=${redirectUri}`;
-}
-
-// 2. Auf der Callback-Seite (nach dem Login)
-async function checkPatreonTier() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const code = urlParams.get('code');
-
-    if (code) {
-        // Hier schickst du den Code an eine "Serverless Function" (z.B. Netlify/Vercel)
-        // Diese Function fragt bei Patreon ab: "Welches Tier hat dieser User?"
-        const response = await fetch('/api/check-tier', { method: 'POST', body: JSON.stringify({ code }) });
-        const data = await response.json();
-
-        if (data.hasGoldTier) {
-            document.getElementById('premium-content').style.display = 'block';
-            localStorage.setItem('isPatron', 'true'); // Temporär merken
-        }
-    }
-}
-
 function scrollToSection(section) {
     const targetElement = $(`[data-section="${section}"]`);
 
@@ -58,21 +32,21 @@ const SOCIAL_CARDS = {
         {
             title: "Main TikTok",
             description: "Lyna posts her main content here. The account is private, but follow requests are accepted.",
-            url: "https://tiktok.com/theLxna_playz",
+            url: "https://tiktok.com/@theLxna_playz",
             iconClass: "fab fa-tiktok",
             actionLabel: "Follow on TikTok"
         },
         {
             title: "VRC TikTok",
             description: "A public profile focused on VRChat clips, stream moments, and event highlights.",
-            url: "https://tiktok.com/theLxna_playz",
+            url: "https://tiktok.com/@LxnaPlayz_VRC",
             iconClass: "fab fa-tiktok",
             actionLabel: "Follow on TikTok"
         },
         {
             title: "VRC Family TikTok",
             description: "A profile focused on VRChat family, friends, and community collaborations.",
-            url: "https://tiktok.com/LxnaPlayz_VRC",
+            url: "https://tiktok.com/@Familie.fluff",
             iconClass: "fab fa-tiktok",
             actionLabel: "Follow on TikTok"
         },

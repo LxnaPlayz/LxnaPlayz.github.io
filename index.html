@@ -1,46 +1,130 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deprecated - Seite umgezogen</title>
-    <meta name="description" content="Diese Website ist deprecated und wurde nach https://lxnaplayz.site verschoben.">
-    <style>
-        body {
-            margin: 0;
-            min-height: 100vh;
-            display: grid;
-            place-items: center;
-            padding: 24px;
-            font-family: Arial, Helvetica, sans-serif;
-            background: #101010;
-            color: #f1f1f1;
-            text-align: center;
-        }
-        main { max-width: 640px; }
-        a { color: #a78bfa; font-weight: 700; }
-    </style>
+    <link rel="stylesheet" href="res/styles/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/4419b7770f.js" crossorigin="anonymous"></script>
+    <script src="res/js/i18n.js" defer></script>
+    <script src="res/js/mobile-menu.js" defer></script>
+    <script src="res/js/main.js"></script>
+    <title data-i18n="page_title_home">Lyna Socials - Official Social Links</title>
 </head>
 <body>
-<main>
 
-    <div id="premium-content" style="display: none;">
-        <h2>Willkommen, edler Spender!</h2>
-        <p>Hier ist dein exklusiver Content...</p>
+<!-- ============================================
+     HEADER NAVIGATION
+     ============================================ -->
+<header id="Home">
+    <div class="header-container">
+        <img class="logo-text" src="res/pictures/LogoText.png" alt="Lyna Playz Logo">
     </div>
 
-    <button onclick="loginWithPatreon()">Mit Patreon einloggen zum Freischalten</button>
+    <div class="button-container">
+        <button class="menu-btn" data-scroll="landing" data-i18n="nav_home">Home</button>
+        <button class="menu-btn" data-scroll="other" data-i18n="nav_socials">Socials</button>
+        <button class="menu-btn" data-scroll="info" data-i18n="nav_gallery">Gallery</button>
+        <a id="kommission-btn" class="menu-btn" href="Kommission.html" data-i18n="nav_commission">Commission</a>
+        <div class="lang-switch" aria-label="Language switch">
+            <span class="lang-switch-label" data-i18n="lang_label">Language</span>
+            <div class="lang-switch-toggle" role="group" aria-label="Language switch" data-i18n-aria-label="language_switch">
+                <button type="button" class="lang-btn" data-lang="de">DE</button>
+                <button type="button" class="lang-btn" data-lang="en">EN</button>
+            </div>
+        </div>
+    </div>
 
-    <h1>Diese Website ist deprecated.</h1>
-    <p>Du wirst automatisch zu der neuen Website weitergeleitet.</p>
-    <p>
-        Falls die Weiterleitung nicht funktioniert, oeffne bitte:
-        <a href="https://lxnaplayz.site">https://lxnaplayz.site</a>
-    </p>
-    <noscript>
-        <p>JavaScript ist deaktiviert. Bitte nutze den Link oben.</p>
-    </noscript>
+    <button
+            class="mobile-menu-toggle"
+            type="button"
+            aria-controls="mobile-side-menu"
+            aria-expanded="false"
+            aria-label="Open menu"
+            data-i18n-aria-label="mobile_menu_open"
+    >
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+    </button>
+</header>
+
+<aside id="mobile-side-menu" class="mobile-side-menu" aria-hidden="true">
+    <div class="mobile-side-header">
+        <h2 data-i18n="mobile_menu_title">Menu</h2>
+        <button type="button" class="mobile-side-close" aria-label="Close menu" data-i18n-aria-label="mobile_menu_close">&times;</button>
+    </div>
+    <nav class="mobile-side-links" aria-label="Mobile navigation" data-i18n-aria-label="mobile_navigation">
+        <a href="#landing" data-i18n="nav_home">Home</a>
+        <a href="#socials" data-i18n="nav_socials">Socials</a>
+        <a href="#gallery" data-i18n="nav_gallery">Gallery</a>
+        <a href="Kommission.html" data-i18n="nav_commission">Commission</a>
+    </nav>
+    <div class="mobile-side-lang">
+        <span class="lang-switch-label" data-i18n="lang_label">Language</span>
+        <div class="lang-switch-toggle" role="group" aria-label="Language switch" data-i18n-aria-label="language_switch">
+            <button type="button" class="lang-btn" data-lang="de">DE</button>
+            <button type="button" class="lang-btn" data-lang="en">EN</button>
+        </div>
+    </div>
+</aside>
+<div class="mobile-menu-backdrop" hidden></div>
+
+<!-- ============================================
+     MAIN CONTENT
+     ============================================ -->
+<main>
+
+    <section class="main-commission-banner" aria-labelledby="main-commission-banner-title">
+        <p class="main-commission-banner-kicker" data-i18n="home_commission_kicker">Commission Open</p>
+        <h2 id="main-commission-banner-title" data-i18n="home_commission_title">VRChat Avatar Commissions Are Open</h2>
+        <p data-i18n="home_commission_text">Custom setup, optimization, and detail-focused avatar work. Click below to request your commission.</p>
+        <a class="kommission-cta kommission-cta-primary" href="Kommission.html" data-i18n="home_commission_cta">Go to Commission Page</a>
+    </section>
+
+    <!-- LANDING SECTION -->
+    <div id="landing" class="landing" data-section="landing">
+        <div class="container">
+            <div class="background-box"></div>
+            <img class="logo" src="res/pictures/LogoText.png" alt="Lyna Playz">
+        </div>
+
+        <h5 class="est">Est. 2025</h5>
+        <h1 class="title" data-i18n="home_welcome">WELCOME</h1>
+        <h2 class="title2" data-i18n="home_subtitle">On Lyna Playz's Official Social Hub!</h2>
+    </div>
+
+
+
+    <!-- SOCIAL PLATFORMS SECTION -->
+    <div id="socials" class="other" data-section="other">
+        <!-- Dynamically rendered from res/js/main.js to avoid repeated card markup -->
+    </div>
+
+
+    <!-- GALLERY SECTION -->
+    <div id="gallery" class="info" data-section="info">
+        <!-- Instagram Section -->
+        <div id="gallery-grid" class="insta">
+            <!-- Dynamically rendered from res/js/main.js to avoid repeated slot markup -->
+        </div>
+    </div>
+
+    <!-- GALLERY LIGHTBOX -->
+    <div id="gallery-lightbox" class="lightbox" aria-hidden="true" hidden>
+        <button type="button" class="lightbox-close" aria-label="Close image preview" data-i18n-aria-label="lightbox_close">&times;</button>
+        <div class="lightbox-content" role="dialog" aria-modal="true" aria-label="Image preview" data-i18n-aria-label="lightbox_dialog">
+            <img id="lightbox-image" src="" alt="Expanded gallery image" data-i18n-alt="lightbox_image_alt">
+        </div>
+    </div>
+
+
+    <!-- FOOTER -->
+    <div class="impressum">
+        <p>&copy; 2026 theLxna_playz. All rights reserved.</p>
+        <p><a href="impressum.html" data-i18n="footer_imprint">Imprint</a></p>
+    </div>
+
 </main>
+
 </body>
 
 </html>
